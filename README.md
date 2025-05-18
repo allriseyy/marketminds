@@ -11,6 +11,14 @@ git clone https://github.com/allriseyy/marketminds.git
 ```
 4. Done! You are ready to go
 
+
+# Dependencies
+```bash
+dotnet add package Swashbuckle.AspNetCore  #SWAGGER
+```
+
+
+
 # The ingredients
 ## IDE
 Visual Studio
@@ -19,7 +27,7 @@ Visual Studio
 C#
 
 ## Framework
-.NET
+.NET 9.0
 
 ## OS
 Windows

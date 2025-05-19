@@ -13,6 +13,7 @@ git clone https://github.com/allriseyy/marketminds.git
 
 
 # Dependencies
+you can either install using dotnet ot NuGet
 ```bash
 dotnet add package Swashbuckle.AspNetCore  #SWAGGER
 ```
@@ -34,3 +35,6 @@ Windows
 
 ## Platform
 Web API
+
+## Database Management System
+MySQL

@@ -17,6 +17,8 @@ you can either install using dotnet ot NuGet
 ```bash
 dotnet add package Swashbuckle.AspNetCore  #SWAGGER
 ```
+![image](https://github.com/user-attachments/assets/c0c1e3f6-440e-4a3e-abec-adbfe23a7638)
+
 
 
 

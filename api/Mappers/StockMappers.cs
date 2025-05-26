@@ -15,5 +15,18 @@
                 MarketCap = stock.MarketCap
             };
         }
+
+        public static Models.Stock toStockFromCreateDTO(this Dtos.Stock.CreateStockRequestDto stockDto)
+        {
+            return new Models.Stock
+            {
+                Symbol = stockDto.Symbol,
+                CompanyName = stockDto.CompanyName,
+                Purchase = stockDto.Purchase,
+                LastDiv = stockDto.LastDiv,
+                Industry = stockDto.Industry,
+                MarketCap = stockDto.MarketCap
+            };
+        }
     }
 }

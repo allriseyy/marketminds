@@ -46,5 +46,19 @@ namespace api.Controllers
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetById), new { id = stockModel.Id }, stockModel.toStockDto());
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAsync([FromRoute] int id, [FromBody] UpdateStockRequestDto updateDto)
+        {
+            var stockModel = _context.Stocks.FirstOrDefault(x => x.Id == id);
+            if (stockModel == null)
+            {
+                return NotFound();
+            }
+            stockModel.toStockFromUpdateDTO(updateDto);
+            await _context.SaveChangesAsync();
+
+            return Ok(stockModel.toStockDto());
+        }
     }
 }

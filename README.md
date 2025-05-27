@@ -24,7 +24,13 @@ dotnet ef database update
 
 # Debug
 ```bash
-dotnet watch run  #Swaagger will be opened for you automatically to test the APIs
+dotnet watch run
+```
+
+# Documentation
+```bash
+http://localhost:<port>/swagger/index.html
+http://localhost:<port>/openapi/v1.json
 ```
 
 # Dependencies
@@ -36,9 +42,17 @@ dotnet add package name.of.the.package
 
 # Useful commands and links
 ```bash
- dotnet ef migrations add init     #initialize database
- dotnet ef migrations remove     #remove migration files
+dotnet ef migrations add init     #initialize database
+dotnet ef migrations remove     #remove migration
+dotnet ef migrations add NameOfMigration     #add new migration
+dotnet ef database update     #update database
 ```
+
+# Notes
+## how to create a new model
+Models -> Data -> Dtos > Mappers -> Controllers <br/>
+for example: <br/>
+![image](https://github.com/user-attachments/assets/cdec8674-d0fe-4d13-b9c9-3572c1a8450e)
 
 # The ingredients
 ## IDE

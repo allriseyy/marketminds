@@ -30,7 +30,7 @@ namespace api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var stock = await _context.Stocks.FindAsync(id);
+            var stock = await _stockRepo.GetByIdAsync(id);
             if (stock == null)
             {
                 return NotFound();
@@ -46,35 +46,29 @@ namespace api.Controllers
                 return BadRequest("Stock data is required.");
             }
             var stockModel = stockDto.toStockFromCreateDTO();
-            await _context.Stocks.AddAsync(stockModel);
-            await _context.SaveChangesAsync();
+            await _stockRepo.CreateAsync(stockModel);
             return CreatedAtAction(nameof(GetById), new { id = stockModel.Id }, stockModel.toStockDto());
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAsync([FromRoute] int id, [FromBody] UpdateStockRequestDto updateDto)
         {
-            var stockModel = await _context.Stocks.FirstOrDefaultAsync(x => x.Id == id);
+            var stockModel = await _stockRepo.UpdateAsync(id, updateDto);
             if (stockModel == null)
             {
                 return NotFound();
             }
-            stockModel.toStockFromUpdateDTO(updateDto);
-            await _context.SaveChangesAsync();
-
             return Ok(stockModel.toStockDto());
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete([FromRoute] int id)
         {
-            var stockModel = _context.Stocks.FirstOrDefault(x => x.Id == id);
+            var stockModel = _stockRepo.DeleteAsync(id);
             if (stockModel == null)
             {
                 return NotFound();
             }
-            _context.Stocks.Remove(stockModel);
-            _context.SaveChanges();
             return NoContent();
         }
     }

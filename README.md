@@ -12,7 +12,7 @@ git clone https://github.com/allriseyy/marketminds.git
 ```
 5. change the connection string in **appsettings.json**
 ```bash
-"DefaultConnection": "Data Source={Your SQL Server Name};Initial Catalog=marketmindsdb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+"DefaultConnection": "Data Source={Your SQL Server Name};Initial Catalog={yourdatabasename};Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
 ```
 6. create a database called **marketmindsdb**
 7. run the initial migration files to migrate the database changes

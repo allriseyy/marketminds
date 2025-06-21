@@ -57,7 +57,7 @@ for example: <br/>
 # The ingredients
 ## IDE
 Visual Studio <br/>
-SQL Serer Management Studio 20
+SQL Server Management Studio 20
 
 ## Language
 C# <br/>
